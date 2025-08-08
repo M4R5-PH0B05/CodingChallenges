@@ -120,18 +120,15 @@ if __name__ == "__main__":
             budget_data["Other"].extend(Other)
             with open(f"{path}budget.json", "w") as f:
                 json.dump(budget_data, f, indent=4)
-            see = input("Do you want to see your expences (yes/no): ")
-            if see.lower == "yes":
-                printValues()
-            else:
 
-                with open(f"{path}budget.json", "r") as f:
-                    data = json.load(f)
-                    for values in data:
+            with open(f"{path}budget.json", "r") as f:
+                data = json.load(f)
+                for values in data:
+                    for items in data[values]:
                         if values == "Income":
                             total = data[values]
                         else:
-                            total = total - data[values]
+                            total = total - items
                     print(f"Your Total Budget left is {total}")
 
 
