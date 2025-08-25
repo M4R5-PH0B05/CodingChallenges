@@ -3,7 +3,7 @@ import json
 
 from pprint import pprint
 
-path = ".\\Budgeting App\\Tom\\"
+path = ".\\Budgeting App → Python\\Tom\\"
 budget_data = {}
 
 def hash_password(password):
